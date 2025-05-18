@@ -1,4 +1,4 @@
-/* General styles */
+/* Giao diện chung */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Container for the game */
+/* Khung trò chơi */
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -17,13 +17,13 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Game title */
+/* Tiêu đề trò chơi */
 h1 {
     text-align: center;
     color: #2c3e50;
 }
 
-/* Difficulty tabs */
+/* Tabs chọn độ khó */
 .difficulty-tabs {
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@ h1 {
     color: #3498db;
 }
 
-/* Sudoku grid */
+/* Bảng Sudoku */
 .sudoku-grid {
     width: 100%;
     border-collapse: collapse;
@@ -76,7 +76,7 @@ h1 {
     100% { transform: scale(1); }
 }
 
-/* Hiệu ứng rung nhẹ khi điền sai */
+/* Hiệu ứng rung khi sai */
 .wrong-shake {
     animation: shake 0.3s ease;
 }
@@ -87,7 +87,7 @@ h1 {
     40%, 80% { transform: translateX(2px); }
 }
 
-/* Hiệu ứng mạnh hơn khi hoàn thành hàng ngang, cột, hoặc khối 3x3 */
+/* Hiệu ứng khi hoàn thành hàng, cột, khối */
 .sudoku-grid td.completed-row,
 .sudoku-grid td.completed-col,
 .sudoku-grid td.completed-block {
@@ -162,7 +162,7 @@ h1 {
     border-bottom: 2px solid #333;
 }
 
-/* Control panel */
+/* Bảng điều khiển */
 .control-panel {
     display: flex;
     justify-content: space-between;
@@ -187,7 +187,7 @@ h1 {
     color: #2c3e50;
 }
 
-/* Number pad */
+/* Bảng số */
 .number-pad {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
