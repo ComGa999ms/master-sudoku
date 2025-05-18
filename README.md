@@ -1,3 +1,5 @@
+Link trò chơi: https://comga999ms.github.io/master-sudoku/
+
 ## Intro
 Thông thường khi nói về trò chơi sudoku thì đại đa số mọi người sẽ nghĩ ngay đến việc chơi với ma trận 9x9 và với kích thước này thì rất dễ dàng giải được bài toán bằng thuật Backtracking với thời gian cũng khá nhanh khoảng ~100ms cho một bảng 9x9. Nhưng nếu mở rộng bảng ra 16x16, 25x25 thì sao? Lúc này thuật toán chạy khá lâu ~10s cho 16x16, > 1 phút với bảng 25x25. Vậy nên ở bài viết này mình sẽ trình bày cách giải bài toán trên tối ưu thời gian hơn bằng thuật toán Dancing Links.
 
