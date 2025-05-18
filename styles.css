@@ -1,0 +1,283 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container for the game */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Game title */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Difficulty tabs */
+.difficulty-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.difficulty-tab {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+}
+
+.difficulty-tab.active {
+    border-bottom: 3px solid #3498db;
+    color: #3498db;
+}
+
+/* Sudoku grid */
+.sudoku-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 4px double #333;
+}
+
+.sudoku-grid td {
+    width: 11.11%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 35px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.sudoku-grid td.fixed {
+    background-color: #f8f9fa;
+}
+
+.correct-pulse {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hiệu ứng rung nhẹ khi điền sai */
+.wrong-shake {
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-2px); }
+    40%, 80% { transform: translateX(2px); }
+}
+
+/* Hiệu ứng mạnh hơn khi hoàn thành hàng ngang, cột, hoặc khối 3x3 */
+.sudoku-grid td.completed-row,
+.sudoku-grid td.completed-col,
+.sudoku-grid td.completed-block {
+    animation: strong-pulse 0.5s ease;
+}
+
+@keyframes strong-pulse {
+    0% {
+        transform: scale(1);
+        background-color: inherit;
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #bee0f5;
+        box-shadow: 0 0 10px rgba(46, 134, 193, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        background-color: inherit;
+        box-shadow: none;
+    }
+}
+
+.sudoku-grid td.selected {
+    background-color: #bee0f5;
+    color: black;
+    font-size: 35px;
+    box-shadow: 0 0 0 2px #bee0f5 inset;
+}
+
+.sudoku-grid td.fixed.selected {
+    color: #333;
+}
+
+.sudoku-grid td.same-number {
+    background-color: #bee0f5;
+    transition: background-color 0.2s;
+}
+
+.sudoku-grid td.selected.same-number {
+    background-color: #bee0f5;
+}
+
+.sudoku-grid td.highlight {
+    background-color: #e4edf4;
+    transition: background-color 0.2s;
+}
+
+.sudoku-grid td:not(.fixed):hover {
+    background-color: #d4e6f7;
+    cursor: pointer;
+}
+
+.sudoku-grid td.fixed:hover {
+    cursor: not-allowed;
+}
+
+.sudoku-grid td.selected.highlight {
+    background-color: #d1def4;
+}
+
+.sudoku-grid td.error {
+    color: #e74c3c;
+}
+
+.sudoku-grid td:nth-child(3n) {
+    border-right: 2px solid #333;
+}
+
+.sudoku-grid tr:nth-child(3n) td {
+    border-bottom: 2px solid #333;
+}
+
+/* Control panel */
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Number pad */
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.number-btn {
+    padding: 15px 0;
+    font-size: 30px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.number-btn.completed {
+    background-color: #e0e0e0;
+    color: #2ecc71;
+    animation: pulse 0.3s ease;
+}
+
+.number-btn:disabled {
+    background-color: #d0d0d0;
+    color: #666;
+    cursor: not-allowed;
+}
+
+#new-game-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#new-game-btn:hover {
+    background-color: #27ae60;
+}
+
+#solution-btn {
+    padding: 12px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.control-btn {
+    padding: 10px 15px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    background-color: #2980b9;
+}
+
+.sudoku-grid.paused {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.pause-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Ô điền đúng */
+.sudoku-grid td.correct {
+    background-color: #e6f7e6;
+    pointer-events: none; 
+}
