@@ -199,6 +199,16 @@ def read_sudoku_from_file(filename="chall.txt"):
         print(f"Lỗi khi đọc file: {e}")
         return None
 
+def write_sudoku_to_file(grid, filename="sol.txt"):
+    try:
+        with open(filename, 'w') as f:
+            for i in range(16):
+                row = [str(grid[i][j]) for j in range(16)]
+                f.write(" ".join(row) + "\n")
+        print(f"Đã ghi đáp án vào {filename}")
+    except Exception as e:
+        print(f"Lỗi khi ghi file: {e}")
+
 if __name__ == "__main__":
     grid = read_sudoku_from_file()
     if grid is not None:
@@ -208,5 +218,6 @@ if __name__ == "__main__":
         if solved:
             print("\nSolution:")
             print_sudoku(solution)
+            write_sudoku_to_file(solution)
         else:
             print("\nKhông tìm thấy lời giải!")
