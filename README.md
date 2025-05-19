@@ -14,14 +14,13 @@ Trước khi giải được bài toán trên thì chúng ta cần tìm hiểu v
 - Họ các tập con $S = \{S_1, S_2, \dots, S_k\}$, với mỗi $S_i \subseteq X$.
 
 **Yêu cầu**: Tìm một **phủ chính xác** $S^* \subseteq S$ thỏa mãn:
-1. **Tính rời rạc**:  Các tập trong $S^*$ đôi một không giao nhau
-   $\forall S_i, S_j \in S^* \ (i \neq j): S_i \cap S_j = \emptyset$.  
+1. **Tính rời rạc**:  Các tập trong $S^{*}$ đôi một không giao nhau $\forall S_i, S_j \in S^* \ (i \neq j): S_i \cap S_j = \emptyset$.  
 2. **Tính phủ toàn bộ**:  Hợp của các tập trong $S^*$ bằng $X$
    $\bigcup_{S_i \in S^*} S_i = X$.  
 → Mỗi phần tử $x \in X$ xuất hiện **đúng một lần** trong $S^*$.
 ### **Điều kiện cần để tồn tại phủ**
 - **Điều kiện phủ**:   Hợp của tất cả các tập con phải bằng tập mẹ ban đầu. Nếu không thỏa, bài toán vô nghiệm do thiếu phần tử. $\bigcup_{S_i \in S} S_i = X$.  
-- **Tập rỗng**:  Nếu $\emptyset \in S$, nó có thể bị loại khỏi $S^*$ vì không ảnh hưởng đến phủ.
+- **Tập rỗng**:  Nếu $\emptyset \in S$, nó có thể bị loại khỏi $S^{*}$ vì không ảnh hưởng đến phủ.
 
 
 
